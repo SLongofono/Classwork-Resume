@@ -1,6 +1,0 @@
-Bubble Sort sort 50000 numbers in 10.1714 seconds.
-Selection Sort sort 50000 numbers in 2.95453 seconds.
-Insertion Sort sort 50000 numbers in 7.40787 seconds.
-Quick Sort sort 50000 numbers in 2.3313 seconds.
-Quick Sort (with median) sort 50000 numbers in 0.72832 seconds.
-Merge Sort sort 50000 numbers in 0.00670512 seconds.
