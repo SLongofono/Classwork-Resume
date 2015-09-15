@@ -1,0 +1,39 @@
+/* File Name: Lab6.java
+ * Author: Stephen Longofono s580l129@ku.edu
+ * Assignment:   EECS-168 Lab06
+ * Description:  Play with arrays:
+ * 					
+    Ask the user how many numbers he/she wants to store. Assume integers.
+    You must prompt the user over and over until they give a value greater than zero. Use a while or do while to do this. 
+    Test this before moving on.  Create an array of integer that can hold the number specified by the user
+    Now that you have an array, we need to get values. Create a loop that will ask the user to input values for the array.
+    Display the values back to the user after you obtain all of them. Test this before moving on.
+    Create a new variable to store the sum of all the numbers in the array. You will calculate the sum like we used to, 
+    but we'll need to access the values in the array. Test this before moving on.
+    Create a variable called max and a variable called min. Set them both to the 0th element of the user array. Now, in a loop compare min and max to every element in the array.
+        if you find a value bigger than max, store that value in max
+        if you find a value less than min, store that value in min
+    Finally display the sum, max, min, and average (recall the average of a bunch of numbers is the (sum / how many numbers there were))
+
+ * Date: 10-6-2014
+ *
+ * 
+ */
+
+import java.util.Scanner;
+public class Lab6 {
+
+	public static void main (String [] args){
+		
+	
+		Scanner input = new Scanner(System.in);
+		int size = 0;
+		while(size <= 0){
+			System.out.print("Input an array size: ");
+			size = input.nextInt();
+		}
+		
+		int [] myArray = new int[size];
+		System.out.println(size);
+	}
+}

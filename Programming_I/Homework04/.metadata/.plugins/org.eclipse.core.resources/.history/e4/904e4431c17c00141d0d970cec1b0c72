@@ -1,0 +1,52 @@
+/*
+ * 	File Name: HangMan.java
+	Author: Stephen Longofono
+	KUID: 2776831
+	Email Address: s580l129@ku.edu 
+	Homework Assignment Number: 4 
+	Description:  
+	Last Changed: 12-05-14 
+	
+ */
+public class HangMan {
+
+	public static int gamesPlayed = 0;
+	private int MAX_MISSES_ALLOWED;
+	private int guessCount;
+	private int missesCount;
+	private char[] missedMarkers;
+	private char[] disguised_word;
+	private final String secret;
+	
+	public void Hangman(String s1){							//constructor initializes variables, populates arrays
+		MAX_MISSES_ALLOWED = 7;							//initialized here in case we want to change the program later
+		guessCount = 0;
+		missesCount = 0;
+		missedMarkers = new char[7];
+		disguised_word = new char[s1.length()];
+		secret = s1;
+		for(int i = 0; i< missedMarkers.length; i++){	//ie lives left
+			missedMarkers[i] = 'O';
+		}
+		for(int i = 0; i<disguised_word.length; i++){	//show the disguised word, with spaces shown to be nice
+			if(s1.charAt(i)==' '){
+				disguised_word[i] = ' ';
+			}
+			else{
+				disguised_word[i] = '?';
+			}
+		}
+		
+	}
+	
+	
+	private static boolean hasChar(char[] array, char c){
+		for(int i = 0; i<array.length; i++){
+			if(array[i]==c){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+}

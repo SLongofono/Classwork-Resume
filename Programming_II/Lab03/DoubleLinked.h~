@@ -1,0 +1,22 @@
+/*	Name: Stephen Longofono - 2776831
+*	File name: DoubleLinked.h
+*	Date: 02-11-2015
+*	Description: This class is a double-linked list of nodes.  It is critical that the private members 
+*	remain accurate or most of the methods will break down.
+*/
+
+#ifndef DOUBLE_H
+#define DOUBLE_H
+#include "Node.h"
+
+class DoubleLinked{
+
+	public:
+		dfd
+
+	private:
+		Node<T>*m_front
+
+};
+
+#endif

@@ -1,0 +1,9 @@
+/**
+*	@file : ValueNotFoundException.cpp
+*	@author :  Stephen Longofono
+*	@date : 04-10-2015
+*	Purpose: This class implements the ValueNotFoundException class.
+*/
+#include "ValueNotFoundException.h"
+
+ValueNotFoundException::ValueNotFoundException(const char* message): std::runtime_error(message){}

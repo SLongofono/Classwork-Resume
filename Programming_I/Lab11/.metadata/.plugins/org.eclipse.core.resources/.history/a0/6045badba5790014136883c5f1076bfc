@@ -1,0 +1,37 @@
+Using BufferedWriter
+
+You can also write a new file in the following manner,
+
+try{
+
+  // Create file 
+  FileWriter fstream = new FileWriter("out.txt");
+  BufferedWriter out = new BufferedWriter(fstream);
+
+  out.write("Hello Java");
+
+  //Close the output stream
+  out.close();
+  }
+
+  catch (Exception e){
+  //Catch exception if any
+  System.err.println("Error: " + e.getMessage());
+  }
+
+Exercise 1
+
+Letter_Counter.java
+
+Write a program that...
+
+    accepts a filename from the user that indicates the input file
+    obtains a filename to use as the output file
+    asks the user if he/she wants to scan the file in a case sensitive manner ('y' for yes and 'n' for no)
+    the program then reads the file and reports how many of each letter are there in the file.
+        if the file could not be opened, you must ask the user for valid file name until one is given
+    once a valid file name is given, print all of contents and store the analysis of the file in the output file name specified
+
+You will be reading the input from a file and printing the output to another file.
+
+For example, if the file input.txt contains: 

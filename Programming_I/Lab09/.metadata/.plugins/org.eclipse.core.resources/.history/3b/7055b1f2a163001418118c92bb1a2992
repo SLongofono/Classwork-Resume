@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Lab09 {
+
+	public static void main(String []args){
+		
+		Scanner io = new Scanner(System.in);
+		int dimension1 = 0;
+		int dimension2 = 0;
+		System.out.print("How many rows?:");
+		dimension1 = io.nextInt();
+		System.out.print("How many rows?:");
+		dimension2 = io.nextInt();
+		int[][] myArray = new int[dimension1][dimension2];
+		
+		for(int i = 0; i < myArray.length; i++){			//collects data, populates array, provides feedback
+			for(int j = 0; j < myArray[i].length; j++){
+				System.out.print("Enter a value for position (" + i + "," + j + "):");
+				myArray[i][j] = io.nextInt();
+			}
+		}
+		
+		
+		
+	}
+	
+}

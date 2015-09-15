@@ -1,0 +1,83 @@
+/*
+ * 	File Name: GameDriver.java
+	Author: Stephen Longofono
+	KUID: 2776831
+	Email Address: s580l129@ku.edu 
+	Homework Assignment Number: 4 
+	Description:  
+	Last Changed: 12-05-14 
+	
+ */
+import java.util.Scanner;
+
+public class GameDriver {
+
+	public static void main(String [] args){
+		
+		Scanner input = new Scanner(System.in);
+		String secret = "";
+		String playAgain = "no";
+		String lineIn = "";
+		boolean notDonePlaying = true;
+		
+		System.out.println("Enter the secret word:");
+		secret = input.nextLine();
+		
+		while(notDonePlaying){
+			
+			for(int i = 0; i<100; i++){
+				System.out.println("");
+			}
+		
+			HangMan game = new HangMan(secret);
+		
+			System.out.println("Welcome to the Hangman Game!\n----------------------------");
+		
+			while(!game.isGameOver()){
+				System.out.println("Guess this: " + game.getDisguisedWord());
+				System.out.println("Guesses so far: " + game.getGuessCount());
+				System.out.println("Misses: " + game.getMissedMarker());
+				System.out.print("Enter your guess character: ");
+				lineIn = input.next();
+				while(lineIn == null){
+					System.out.println("You must enter a character: ");
+					lineIn = input.next();
+				}
+				if(game.guessCharacter(lineIn.charAt(0))){
+					System.out.println(lineIn.charAt(0) + " is in the secret word!");
+					System.out.println("");
+					
+				}
+				else{
+					System.out.println(lineIn.charAt(0) + " is not in the secret word.  Death draws closer.");
+					System.out.println("");
+				}
+			}
+			
+			//endgame and prompt to play again
+			System.out.println("Game over!");
+			if(game.isFound()){
+				System.out.println("Congratulations! You guessed the secret word: " + secret + " in " + game.getGuessCount() + " guesses!");
+				System.out.println("Do you want to play again? (yes/no): ");
+				playAgain = input.next().toLowerCase();
+				if(!playAgain.equals("yes")){
+					notDonePlaying = false;
+				}
+				System.out.println("Enter a secret word: ");
+				secret = input.nextLine();
+			}
+			else{
+				System.out.println("You have died. Next time, guess as if your life depended on it.");
+				System.out.println("Do you want to play again? (yes/no): ");
+				playAgain = input.next().toLowerCase();
+				if(!playAgain.equals("yes")){
+					notDonePlaying = false;
+				}
+				System.out.println("Enter a secret word: ");
+				secret = input.nextLine();
+			}
+		}
+		System.out.println("Thanks for playing " + HangMan.gamesPlayed + " game(s) of Hang Man!");
+	}	//main
+	
+}	//class

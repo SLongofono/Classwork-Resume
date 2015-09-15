@@ -1,0 +1,113 @@
+/*
+ * Stephen Longofono - s580l129@ku.edu
+ * Lab 11 - 
+ * 
+ */
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class Letter_Counter {
+
+	public static void main(String args[]){
+		String file = "test.txt";				//initializations.
+		String outFile = "out/txt";
+		String lastLine = " ";
+		boolean fileExists = true;
+		boolean caseSensitive = false;
+		Scanner input = new Scanner(System.in);
+		int[] letterCount = new int [26];		//will store how many of each letter lowercase
+		int[] letterCountUppr = new int[26];	//will store how many of each letter uppercase
+		for(int i = 0; i<letterCount.length; i++){	//initialized to zero for each letter
+			letterCount[i]=0;
+		}
+		FileReader fileRead = null;				//allows us to verify creation of an object later
+		BufferedReader lineIn = null;			// ditto
+		
+		System.out.println("Please enter the name and extension of your file (forexample.txt):");
+		file = input.nextLine();
+		
+		while(fileExists){
+			try{									//in case there is no such file, wrapped in a try/catch block
+				fileRead= new FileReader(file);	//creates a filereader object linked to the file argument
+				lineIn = new BufferedReader(fileRead);	//Creates a buffered reader (like a scanner) for the filereader
+				fileExists = false;  //if this line is reached, the file exists and we can move on
+				
+				System.out.println("Here is the file: ");
+				
+				while(lineIn!=null){	//while the buffer has lines left to read
+					lastLine = lineIn.readLine();	//consume the next line
+					System.out.println(lastLine);	//print that line to console
+				}
+			}
+			catch(Exception e){
+				System.out.println(e.getMessage());	//if something goes wrong, print the associated error message
+				System.out.println("It is possible that the file does not exist.  Please verify the name and extension, and try again");
+				System.out.println("Enter the filename: ");
+				file = input.nextLine();
+			}
+		}
+		
+		System.out.println("");
+		System.out.println("Enter the name of the output file (no extension): ");
+		outFile = input.nextLine();
+		outFile = outFile + ".txt";
+		
+		System.out.println("Does case matter? (enter y for yes or n for no):");
+		String temp = input.next();
+		if(temp.charAt(0)== 121){
+			caseSensitive = true;
+		}
+		
+		
+		
+		
+		
+		
+		
+		if(caseSensitive){
+			
+			
+			
+		}
+		else{
+			
+			
+			
+		}
+		
+		
+		
+		
+	}
+	
+	public void countEm(String filename, int[] arr){
+		
+		try{		//necessary in case the directory does not exist or the file name is bad, among other things
+			FileWriter lineOut = new FileWriter(filename);				
+			BufferedWriter output = new BufferedWriter(lineOut);
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+			System.out.println("Invalid output file name.  Please restart program and try again.  Output filename should not have an extension (.txt, .pdf, etc.)");
+		}
+		
+	}
+	
+	public void countEmBig(String filename, int[] arr){
+		
+		try{		//necessary in case the directory does not exist or the file name is bad, among other things
+			FileWriter lineOut = new FileWriter(filename);				
+			BufferedWriter output = new BufferedWriter(lineOut);
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+			System.out.println("Invalid output file name.  Please restart program and try again.  Output filename should not have an extension (.txt, .pdf, etc.)");
+		}
+		
+	}
+	
+}

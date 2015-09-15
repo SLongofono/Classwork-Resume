@@ -1,0 +1,14 @@
+INDEX VERSION 1.126+/home/slongofo/EECS_168/workspace/Homework01/.metadata/.plugins/org.eclipse.jdt.core
+1874547086.index
+1948381508.index
+3992861028.index
+403585856.index
+2876388170.index
+3593047940.index
+55735278.index
+3831345678.index
+673673109.index
+1844817680.index
+1778023336.index
+1794281294.index
+2584181216.index

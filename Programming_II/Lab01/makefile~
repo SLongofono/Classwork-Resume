@@ -1,0 +1,18 @@
+Main: Main.o Dice.o Pokemon.o Colosseum.o
+	g++ -std=c++11 -Wall Main.o Dice.o -o Main
+
+Main.o: Main.cpp Dice.o Pokemon.o Colosseum.o
+	g++ -std=c++11 -Wall -c Main.cpp
+
+Dice.o: Dice.cpp Dice.h
+	g++ -std=c++11 -Wall -c Dice.cpp
+
+Pokemon.o: Pokemon.cpp Pokemon.h
+	g++ -std=c++11 -Wall -c Dice.cpp
+
+Colosseum.o: Colosseum.cpp Colosseum.h
+	g++ -std=c++11 -Wall -c Dice.cpp
+clean: 
+	rm *.o HelloWorld
+	clean done
+

@@ -1,0 +1,29 @@
+/**
+*	@file : BSTI.h
+*	@author :  Stephen Longofono
+*	@date : 04-10-2015
+*	Purpose: This class is an interface for a general binary search tree.  It includes the clone method to facilitate deep copies(copy constructor defined in the implementation class).
+*/
+
+#ifndef BST_I
+#define BST_I
+#include "ValueNotFoundException.h"
+#include "Node.h"
+
+enum Order{PRE_ORDER, IN_ORDER, POST_ORDER};
+
+template<typename T>
+class BSTI{
+
+	public:
+	virtual ~ BSTI(){};//not pure virtual so we can redefine a deconstructor when necessary
+	virtual BSTI<T>* clone() = 0;//this IS the deep copy constructor, it will call the copy constructor 
+	virtual bool isEmpty() const = 0;
+	virtual bool add(T value) = 0;
+	virtual T search(T value) const throw (ValueNotFoundException) = 0;
+	virtual void printTree(Order order) const = 0;
+	virtual void sortedPrint() const = 0;
+	
+};
+
+#endif

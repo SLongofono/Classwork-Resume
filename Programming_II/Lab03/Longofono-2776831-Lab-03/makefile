@@ -1,0 +1,9 @@
+Lab03: main.o 
+	g++ -g -Wall -std=c++11 main.o -o Lab03
+
+main.o: main.cpp Node.h Node.hpp DoubleLinkedList.h DoubleLinkedList.hpp
+	g++ -g -Wall -std=c++11 -c main.cpp
+clean:
+	rm main.o 
+	rm Lab03
+	clean done

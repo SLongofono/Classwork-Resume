@@ -1,0 +1,16 @@
+SortingSuite: main.o NumberFileGenerator.o NumberFileDriver.o SortDriver.o
+	g++ -Wall -std=c++11 main.o NumberFileGenerator.o NumberFileDriver.o SortDriver.o -o SortingSuite
+
+main.o: main.cpp Sorts.h Sorts.hpp NumberFileGenerator.h NumberFileGenerator.cpp SortDriver.h SortDriver.cpp NumberFileDriver.h NumberFileDriver.cpp
+	g++ -Wall -std=c++11 -c main.cpp
+
+NumberFileGenerator.o: NumberFileGenerator.h NumberFileGenerator.cpp
+	g++ -Wall -std=c++11 -c NumberFileGenerator.cpp
+
+NumberFileDriver.o: NumberFileGenerator.h NumberFileGenerator.cpp NumberFileDriver.h NumberFileDriver.cpp
+	g++ -Wall -std=c++11 -c NumberFileDriver.cpp
+
+SortDriver.o: Sorts.h Sorts.hpp SortDriver.h SortDriver.cpp
+	g++ -Wall -std=c++11 -c SortDriver.cpp
+
+

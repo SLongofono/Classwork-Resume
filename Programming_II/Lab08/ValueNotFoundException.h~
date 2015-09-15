@@ -1,0 +1,14 @@
+#ifndef VEX
+#define VEX
+#include <stdexcept>
+#include <string>
+
+class ValueNotFoundException: public std::runtime_error{
+
+	public:
+	ValueNotFoundException(const char* message);
+
+};
+
+
+#endif

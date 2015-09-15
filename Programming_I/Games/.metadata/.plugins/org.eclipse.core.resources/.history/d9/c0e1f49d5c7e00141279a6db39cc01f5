@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class BlackJack_Driver {
+	
+	public static void main(String[] args){
+		BlackJack game = new BlackJack();
+		Scanner input = new Scanner(System.in);
+		System.out.println("************ Black Jack ************");
+		boolean keepPlaying = true;
+		
+		while(keepPlaying){
+			boolean notOver = true;
+			while(notOver){	
+		
+				System.out.println("Final total: " + game.getCash() + " in " + game.getRound() + " rounds.");
+			}
+		}
+		System.out.println("Total games played: " + BlackJack.gamesPlayed);
+		System.out.println("Thanks for playing!");
+		
+	}
+	
+}
+/* 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
