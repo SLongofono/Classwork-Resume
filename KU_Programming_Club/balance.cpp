@@ -1,9 +1,7 @@
 #include <stack>
-#include <iostream>
 #include <cstring>
 
 bool match(char a, char b){
-
 	if(40==a){
 		return (b-a==1);
 	}
@@ -34,9 +32,10 @@ int main(int argc, char** argv){
 		}
 	}
 	if(stax.empty()){
-		std::cout<<"The string was balanced"<<std::endl;
-		return 0;
+		std::cout<<"True"<<std::endl;
 	}
-	std::cout<<"The string was unbalanced"<<std::endl;
-	return 1;
+	else{
+		std::cout<<"False"<<std::endl;
+	}
+	return 0;
 }
