@@ -15,3 +15,9 @@
 
 *order.py* -		Take in a word as a string, and determine if its letters are in
 			alphabetical order, in reverse alphabetical order, or otherwise.
+
+*Mastermind* - 		This is a clone of a mastermind game using strings.  The user 
+			selects a difficulty level and is given a number of guesses to
+			deduce which of the words is the correct choice.  Uses a set of
+			9 dictionaries separated by word length, placed in the same path
+			as mastermind.py
