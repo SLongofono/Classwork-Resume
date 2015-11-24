@@ -8,7 +8,7 @@
 
 **Lab 4 - Stack**     This lab focused on creating a pointer-based stack, again using templated classes and nodes.
 
-**Lab 5 - Interfacees & Inheritance**     This lab used a stack interface and a custom object heirarchy built from scratch, to make use of inherited attributes.  Includes multiple inheritance and private/protected attributes.
+**Lab 5 - Interfaces & Inheritance**     This lab used a stack interface and a custom object heirarchy built from scratch, to make use of inherited attributes.  Includes multiple inheritance and private/protected attributes.
 
 **Lab 6 - Iterative Sorting**     This lab focused on implementing numerical sorting with iterative methods.  Includes BOGOsort, selection sort, and bubble sort, with a timer for each.
 
