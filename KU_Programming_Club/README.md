@@ -1,6 +1,11 @@
 *Balance.cpp* -		Take in a string and determine if all parentheses, braces, and
 			brackets are closed.  Return true if so, false otherwise.
 
+*Duckets.c* - 		Given a list of stock prices in chronological order, select the
+			most profitable pair under the following conditions:
+			The sale price must be one tick removed from the buy price, and
+			the sale price must occur after the buy price.
+
 *List2List.java* -	Take in two lists of integers.  Each represents a larger number,
 			with every element as a single digit of that number, starting from
 			the end.  Return a list in the same format representing the sum
