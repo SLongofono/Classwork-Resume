@@ -5,12 +5,12 @@
  *      Author: 	Brad Torrence
  *      Modified: 	slongofo
  *      Purpose:	This program gathers data from the quake.c program, formats it into a chart,
- *      			and displays the data.  Upon starting, it will wait for a signal (dataFlag)
- *      			indicating that data is ready.  Then, it scales the data into one of 6 divisions
- *      			and formats the data into a chart to display.  The OLED takes longer, and displays
- *      			the data, so it was given priority and the responsibility for resetting the dataFlag
- *      			variable.  In this arrangement, the ADC won't collect another dataset until the OLED is
- *      			ready and waiting.
+ *      		and displays the data.  Upon starting, it will wait for a signal (dataFlag)
+ *      		indicating that data is ready.  Then, it scales the data into one of 6 divisions
+ *      		and formats the data into a chart to display.  The OLED takes longer, and displays
+ *      		the data, so it was given priority and the responsibility for resetting the dataFlag
+ *      		variable.  In this arrangement, the ADC won't collect another dataset until the OLED is
+ *      		ready and waiting.
  */
 
 // Header File
@@ -44,9 +44,9 @@
 //our system set up (as a blocking task), and then we enter the task scheduler loop
 void startScreen(){
     /*
-	 * The RIT128x96x4** functions are a part of the driver API for the OLED
-	 * The details for this API can be found in drivers/rit128x96x4.c
-	 *
+     * The RIT128x96x4** functions are a part of the driver API for the OLED
+     * The details for this API can be found in drivers/rit128x96x4.c
+     *
      * Create a frame for the OLED display
      * 		The ImageDraw function takes an array of unsigned char
      * 		each 8-bit char represents 2 pixels (side-by-side)
@@ -81,9 +81,9 @@ void startScreen(){
     /*
      *  Draw the frame
      *  ImageDraw takes an array of unsigned char as the first argument
-     *  	the next two arguments are the x and y coordinates (respectively)
-     *  	of the screen position to start drawing, and the final two arguments
-     *  	are the width and height (respectively) to which the image is scaled.
+     *  the next two arguments are the x and y coordinates (respectively)
+     *  of the screen position to start drawing, and the final two arguments
+     *  are the width and height (respectively) to which the image is scaled.
      */
     // Draw upper frame starting at (0,0) with width = 128 pixels and height = 1 pixel
     // 	(width and height should match the size of array measured in pixels)
@@ -98,10 +98,10 @@ void startScreen(){
     /*
      * 	Draw the message
      * 	StringDraw takes a string as the first argument
-     * 		the next two arguments are again the x and y coordinates of the starting position
-     * 		and the final argument is pixel brightness for the
+     * 	the next two arguments are again the x and y coordinates of the starting position
+     * 	and the final argument is pixel brightness for the
      * 	The first function writes the first part of the message at (32,24)
-     * 		with a brightness of 15 (full brightness)
+     * 	with a brightness of 15 (full brightness)
      */
 	RIT128x96x4StringDraw(" Press the", 32, 24, 15);
 	RIT128x96x4StringDraw("\"Select\" Button", 16, 33, 15);
@@ -117,7 +117,7 @@ void startScreen(){
 
 	/*
 	 *  When the select button is pressed we need to wipe the message leaving the frame on the OLED.
-	 *   The loop sets the pixels to 0 everywhere except the screen's edges.
+	 *  The loop sets the pixels to 0 everywhere except the screen's edges.
 	 */
 	for(i = 24; i < 50; i++)
 		RIT128x96x4ImageDraw(blank, 2, i, 124, 1);
