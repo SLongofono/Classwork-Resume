@@ -1,12 +1,12 @@
 /*
- *  	Created on: April 22, 2016
+ *  	Created on: 	April 22, 2016
  *      Author: 	slongofo
  *      Purpose:	This program controls the servo, interpreting the signal strength reported by
- *      		  	  the joystick program as the magnitude offset from neutral position.  There is an
- *      			    offset marco defined which may need to be adjusted.  The particular joystick I used
- *      			    did not exactly divide Vcc in half at neutral position, so the center reading from
- *      			    the ADC was about 75 units off.  I would recommend starting with no offset, and slowly
- *      			    adjusting every time you work with a new joystick.
+ *      	  	the joystick program as the magnitude offset from neutral position.  There is an
+ *      	    	offset marco defined which may need to be adjusted.  The particular joystick I used
+ *      		did not exactly divide Vcc in half at neutral position, so the center reading from
+ *      		the ADC was about 75 units off.  I would recommend starting with no offset, and slowly
+ *      		adjusting every time you work with a new joystick.
  */
 
 // Header Files
@@ -35,11 +35,11 @@
 //far left over the full range of motion 2344 ticks.  Since the centerpoint did not divide into 2344,
 //it is the average of the indices on either side.  Don't tell anyone.
 long rotations[13] = {2345+OFFSET,2130+OFFSET,
-								1917+OFFSET,1704+OFFSET,
-								1491+OFFSET,1278+OFFSET,
-								1172+OFFSET,1065+OFFSET,
-								852+OFFSET,639+OFFSET,
-								426+OFFSET,213+OFFSET,0+OFFSET};
+			1917+OFFSET,1704+OFFSET,
+			1491+OFFSET,1278+OFFSET,
+			1172+OFFSET,1065+OFFSET,
+			852+OFFSET,639+OFFSET,
+			426+OFFSET,213+OFFSET,0+OFFSET};
 
 // Reverse direction should you need it.
 //{0,213,426,639,852,1065,1172,1278,1491,1704,1917,2130,2343};
@@ -123,16 +123,15 @@ void servoTask(void *pvParameters) {
 	PWMGenEnable(PWM_BASE, PWM_GEN_0);
 
 	while(true) {
+		//If we get a reading from our ADC queue (populated by the joystick program)
+		if(xQueueReceive(dataBuffer, (void*) &queueVal, 0)){
 
-			//If we get a reading from our ADC queue (populated by the joystick program)
-			if(xQueueReceive(dataBuffer, (void*) &queueVal, 0)){
+			//map the ADC reading to our rotations index
+			rotIndex = convertToSteps(queueVal);
 
-				//map the ADC reading to our rotations index
-				rotIndex = convertToSteps(queueVal);
-
-				//rotate to the index we assigned
-				rotate();
-			}
-			vTaskDelay(100*ONE_MS);
+			//rotate to the index we assigned
+			rotate();
+		}
+		vTaskDelay(100*ONE_MS);
 	}
 }
