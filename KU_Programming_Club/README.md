@@ -24,6 +24,8 @@
 *order.py* -		Take in a word as a string, and determine if its letters are in
 			alphabetical order, in reverse alphabetical order, or otherwise.
 
+*pally.py* - 		Find the longest palindrome present in a given string.
+
 *ThanksPython.py* -	Take in a number as a string, and return the sum of the digits of
 			two to the power of that number.
 
